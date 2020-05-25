@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_24_222850) do
+ActiveRecord::Schema.define(version: 2020_05_25_162522) do
 
   create_table "stocks", force: :cascade do |t|
     t.string "ticker"
@@ -18,6 +18,11 @@ ActiveRecord::Schema.define(version: 2020_05_24_222850) do
     t.decimal "last_price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "stocks_users", id: false, force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "stock_id", null: false
   end
 
   create_table "users", force: :cascade do |t|
