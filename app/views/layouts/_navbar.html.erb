@@ -25,6 +25,7 @@
               <%= fa_icon 'user'%> <%= current_user.full_name%>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item"%>
               <%= link_to "Sign out", destroy_user_session_path, class: "dropdown-item", method: :delete%>
             </div>
           </li>
