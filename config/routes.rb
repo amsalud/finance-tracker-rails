@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get 'my-portfolio', to: 'users#my_portfolio'
   get 'search_stock', to: 'stocks#search'
   post 'add_to_portfolio', to: 'stocks#add_to_portfolio'
+  delete 'remove_from_portfolio', to: 'stocks#remove_from_portfolio'
 end
