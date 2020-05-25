@@ -16,7 +16,7 @@
             <td><%= stock.ticker %></td>
             <td><%= stock.name %></td>
             <td><%= stock.last_price %></td>
-            <td></td>
+            <td><%= link_to "Remove", remove_from_portfolio_path(:stock => stock), method: :delete, class: "btn btn-sm btn-danger", data: { confirm: "Are you sure?" }%></td>
           </tr>
         <%end%>
       </tbody>
