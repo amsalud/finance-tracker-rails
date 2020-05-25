@@ -33,4 +33,10 @@ class StocksController < ApplicationController
     redirect_to my_portfolio_path
   end
 
+  def remove_from_portfolio
+    stock = Stock.find(params[:stock])
+    current_user.stocks.delete(stock)
+    flash[:notice] = "Stock '#{stock.name}' was successfully removed from your portfolio" 
+    redirect_to my_portfolio_path
+  end
 end
