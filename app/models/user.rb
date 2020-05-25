@@ -5,6 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_and_belongs_to_many :stocks
 
+  def full_name
+   return "#{first_name} #{last_name}" if first_name || last_name
+   "Anonymous"
+  end
+
   def stock_already_tracked?(ticker_symbol)
     stock = Stock.check_db(ticker_symbol)
     return false unless stock
