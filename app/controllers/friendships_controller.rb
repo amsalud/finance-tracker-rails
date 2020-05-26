@@ -6,7 +6,7 @@ class FriendshipsController < ApplicationController
   def create
     friend = User.find(params[:friend])
     if current_user.friends << friend
-      flash[:notice] = "You are not following #{friend.first_name} #{friend.last_name}"
+      flash[:notice] = "You are now following #{friend.first_name} #{friend.last_name}"
     else
       flash[:alert] = "There is something wrong please contact admin"
     end
