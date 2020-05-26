@@ -1,6 +1,16 @@
-class FriendshipController < ApplicationController
+class FriendshipsController < ApplicationController
   def index
     @friends = current_user.friends
+  end
+
+  def create
+  end
+
+  def destroy
+    friendship = current_user.friendships.where(friend_id: params[:id]).first
+    friendship.destroy
+    flash[:notice] = "Friend has been unfollowed"
+    redirect_to friends_path
   end
 
   def search
