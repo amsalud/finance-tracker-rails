@@ -1,7 +1,7 @@
 <div class="d-inline-block">
   <%= render 'layouts/messages'%>
 </div>
-<%if @friends%>
+<%if !@friends.empty?%>
   <div class="row">
     <div class="col-9">
       <div class="d-flex flex-wrap">
@@ -20,6 +20,12 @@
           </div>
         <%end%>
       </div>
+    </div>
+  </div>
+<%else%>
+  <div class="row">
+    <div class="col-9">
+      <p class="text-center">No Results found</p>
     </div>
   </div>
 <%end%>
