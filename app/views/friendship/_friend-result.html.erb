@@ -1,0 +1,11 @@
+<div class="d-inline-block">
+  <%= render 'layouts/messages'%>
+</div>
+<%if @friend%>
+  <div class="card card-header d-inline-block">
+    <strong>Name:</strong><%= @friend  %>
+    <%#if current_user.can_track_stock?(@stock.ticker)%>
+      <%= link_to "Add Friend", '#', class: "btn btn-xs btn-success", method: :post%>
+    <%#end%>
+  </div>
+<%end%>
