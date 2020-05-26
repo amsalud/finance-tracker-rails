@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   post 'add_to_portfolio', to: 'stocks#add_to_portfolio'
   delete 'remove_from_portfolio', to: 'stocks#remove_from_portfolio'
   get 'friends', to: 'friendship#index'
+  get 'search_friends', to: 'friendship#search'
 
 end
