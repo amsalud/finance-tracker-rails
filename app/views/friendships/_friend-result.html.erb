@@ -16,7 +16,7 @@
               </p>
               <%= link_to "View Profile", '#', class: "btn btn-xs btn-light"%>
               <%if current_user.not_friends_with?(friend.id)%>
-                <%= link_to "Follow", '#', class: "btn btn-xs btn-success", method: :post%>
+                <%= link_to "Follow", friendships_path(friend: friend), class: "btn btn-xs btn-success", method: :post%>
               <%else%>
               <small class="font-weight-bold">
                 Already Followed
